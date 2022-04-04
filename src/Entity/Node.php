@@ -6,7 +6,7 @@ class Node extends AbstractEntity
 {
     public static int $ROOT_ID = -1;
     public static string $ROOT_NAME = 'ROOT';
-    function __construct(?int $id, private ?int $parentId, private bool $isDirectory, private string $name)
+    function __construct(?int $id, private ?int $parentId, private int $isDirectory, private string $name)
     {
         parent::__construct($id);
     }

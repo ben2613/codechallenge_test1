@@ -26,7 +26,7 @@ class XMLNodeParser extends AbstractNodeParser
         foreach ($children as $child) {
             $tagName = $child->getName();
             $childTree = new NodeTree;
-            $isDirectory = ($tagName === 'drive' || $tagName === 'folder');
+            $isDirectory = ($tagName === 'drive' || $tagName === 'folder') ? 1 : 0;
             $childNode = new Node(null, null, $isDirectory, $child['name']);
             $childTree->node = $childNode;
             $this->parseChildrenIntoTree($childTree, $child->children());

@@ -70,7 +70,11 @@ abstract class AbstractDao
 
         $this->dbh->prepare($query)->execute($values);
 
-        $entity->setId($this->dbh->lastInsertId());
+        // lastInsertId not working negative number in our special ROOT case
+        if ($entity->getId() === null) {
+            $lastInsertId = $this->dbh->lastInsertId();
+            $entity->setId((int)$lastInsertId);
+        }
     }
 
     public function update(AbstractEntity $entity)

@@ -43,11 +43,11 @@ abstract class AbstractDao
         return null;
     }
 
-    public function insert(AbstractEntity $entity)
+    public function insert(AbstractEntity &$entity)
     {
         $query = "INSERT INTO " . $this->getTableName() . " (";
         $fields = $this->getFields();
-        // If id is supplied
+        // If id is not supplied, don't add id to insert
         if ($entity->getId() === null) {
             $fields = array_filter($fields, function ($f) {
                 return $f !== 'id';

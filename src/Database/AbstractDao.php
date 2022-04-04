@@ -47,9 +47,12 @@ abstract class AbstractDao
     {
         $query = "INSERT INTO " . $this->getTableName() . " (";
         $fields = $this->getFields();
-        $fields = array_filter($fields, function ($f) {
-            return $f !== 'id';
-        });
+        // If id is supplied
+        if ($entity->getId() === null) {
+            $fields = array_filter($fields, function ($f) {
+                return $f !== 'id';
+            });
+        }
 
         // Add fields name in query
         $query = $query . implode(', ', $fields) . ") VALUES (";
@@ -60,11 +63,9 @@ abstract class AbstractDao
         $r = new \ReflectionObject($entity);
         $values = [];
         for ($i = 0; $i < sizeof($fields); $i++) {
-            if ($fields[$i] != "id") {
-                $p = $r->getProperty($fields[$i]);
-                $p->setAccessible(true);
-                array_push($values, $p->getValue($entity));
-            }
+            $p = $r->getProperty($fields[$i]);
+            $p->setAccessible(true);
+            array_push($values, $p->getValue($entity));
         }
 
         $this->dbh->prepare($query)->execute($values);
@@ -85,11 +86,9 @@ abstract class AbstractDao
         $r = new \ReflectionObject($entity);
         $values = [];
         for ($i = 0; $i < sizeof($fields); $i++) {
-            if ($fields[$i] != "id") {
-                $p = $r->getProperty($fields[$i]);
-                $p->setAccessible(true);
-                array_push($values, $p->getValue($entity));
-            }
+            $p = $r->getProperty($fields[$i]);
+            $p->setAccessible(true);
+            array_push($values, $p->getValue($entity));
         }
         array_push($values, $entity->getId());
 

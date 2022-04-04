@@ -36,6 +36,31 @@ final class NodeDaoTest extends TestCase
         $this->assertEquals(5, $node->getId());
     }
 
+    public function testInsertWithSpecificId(): void
+    {
+        $node = new Node(-2, -1, false, 'file-2');
+        $this->nodeDao->insert($node);
+        $ret = $this->nodeDao->findByName('file-2');
+        $this->assertCount(1, $ret);
+        $this->assertEquals(-2, $ret[0]->getId());
+    }
+
+    public function testUpdate(): void
+    {
+        $c = $this->nodeDao->findByName('C:')[0];
+        $c->setName('D:');
+        $this->nodeDao->update($c);
+        $this->assertCount(1, $this->nodeDao->findByName('D:'));
+    }
+
+    public function testDelete(): void
+    {
+        $originalCount = count($this->nodeDao->findAll());
+        $c = $this->nodeDao->findByName('C:')[0];
+        $this->nodeDao->delete($c->getId());
+        $this->assertCount($originalCount - 1, $this->nodeDao->findAll());
+    }
+
     private static PDODatabaseConnection $dbc;
     public static function setUpBeforeClass(): void
     {

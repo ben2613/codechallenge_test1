@@ -21,7 +21,7 @@ class PDODatabaseConnection
         $user,
         $password
     ) {
-        return self::makeNewWithConnectionString("mysql:dbname={$database};host={$host};port={$port}", $user, $password);
+        return self::makeNew("mysql:dbname={$database};host={$host};port={$port}", $user, $password);
     }
 
     public static function makeNew($connStr, $user, $password)

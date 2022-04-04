@@ -1,9 +1,7 @@
-SET NAMES utf8;
+SET NAMES utf8mb4;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
-
-SET NAMES utf8mb4;
 
 DROP TABLE IF EXISTS `node`;
 CREATE TABLE `node` (
@@ -13,6 +11,6 @@ CREATE TABLE `node` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `parentId` (`parentId`),
-  KEY `parentId_isDirectory` (`parentId`,`isDirectory`),
+  KEY `parentId_name` (`parentId`,`name`),
   FULLTEXT KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

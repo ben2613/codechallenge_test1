@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <drive name="C:">
+        <folder name="Documents">
+            <folder name="Images">
+                <file name="Image1.jpg" />
+                <file name="Image2.jpg" />
+                <file name="Image3.png" />
+            </folder>
+            <folder name="Works">
+                <file name="Letter.doc" />
+                <folder name="Accountant">
+                    <file name="Accounting.xls" />
+                    <file name="AnnualReport.xls" />
+                </folder>
+            </folder>
+        </folder>
+        <folder name="Program Files">
+            <folder name="Skype">
+                <file name="Skype.exe" />
+                <file name="Readme.txt" />
+            </folder>
+            <folder name="Mysql">
+                <file name="Mysql.exe" />
+                <file name="Mysql.com" />
+            </folder>
+        </folder>
+    </drive>
+</root>

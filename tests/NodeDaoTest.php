@@ -68,9 +68,9 @@ final class NodeDaoTest extends TestCase
         self::$dbc = PDODatabaseConnection::makeNew('sqlite::memory:', null, null);
         self::$dbc->getDatabaseHandle()->exec(
             "CREATE TABLE node (
-                id INT PRIMARY KEY,
-                parentId INT,
-                isDirectory INT,
+                id INTEGER PRIMARY KEY,
+                parentId INTEGER,
+                isDirectory INTEGER,
                 name TEXT
                 )"
         );

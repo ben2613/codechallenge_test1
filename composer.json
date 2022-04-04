@@ -12,5 +12,7 @@
             "email": "ben2613.w@gmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
 }

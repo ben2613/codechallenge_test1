@@ -1,3 +1,9 @@
+Code is written in environment PHP 8.1.4
+
+Need to run `composer install`
+
+Make it in dockerfile later
+
 # Planning
 
 This docker-compose contains adminer and php:apache.

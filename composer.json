@@ -1,0 +1,16 @@
+{
+    "name": "kpwong/netpaytest1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Kpwong\\Netpaytest1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "KPWong",
+            "email": "ben2613.w@gmail.com"
+        }
+    ],
+    "require": {}
+}

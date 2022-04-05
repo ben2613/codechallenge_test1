@@ -1,6 +1,10 @@
 # You can start this project with
 
-`docker-compose up -d`
+```
+git clone https://github.com/ben2613/codechallenge_test1
+cd codechallenge_test1
+docker-compose up -d
+```
 
 ## Task 1
 Single table

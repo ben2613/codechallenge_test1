@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./resources/files.xml:/app/resources/files.xml
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.4
+    restart: unless-stopped
+    volumes:
+      - mariadb-data:/var/lib/mysql
+      - ./resources/000-init.sql:/docker-entrypoint-initdb.d/000-init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_DATABASE: mariadb
+      MYSQL_USER: mariadb
+      MYSQL_PASSWORD: mariadb
+
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - 8081:8080
+
+volumes:
+  mariadb-data: null

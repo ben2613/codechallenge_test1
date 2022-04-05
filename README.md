@@ -1,17 +1,32 @@
-Code is written in environment PHP 8.1.4
+# You can start this project with
 
-Need to run `composer install`
+`docker-compose up -d`
 
-Make it in dockerfile later
+## Task 1
+Single table
+|node|
+|---|
+|id|
+|parentId|
+|isDirectory|
+|name|
 
-# Planning
+## Task 2
+Run
 
-This docker-compose contains adminer and php:apache.
+`docker-compose exec app php runTask2.php`
 
-1. http://localhost:8080 to access the db.
-2. http://localhost:80 to access the webinterface of the application for
-   * Upload the file structure file, I am using xml here(resources/fileStructure.xml)
-   * Or upload a file with same format, only allow 4-space indent + 
+and preview the data at (http://localhost:8081/?server=db&username=mariadb&db=mariadb&select=node)
+
+Try modify `resources/files.xml` and run the command again.
+
+## Task 3
+
+See (report placeholder)
+
+## Task 4
+
+(http://localhost:8080)
 
 
 ### Reference:

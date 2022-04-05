@@ -20,7 +20,7 @@ Run
 
 `docker-compose exec app php runTask2.php`
 
-and preview the data at (http://localhost:8081/?server=db&username=mariadb&db=mariadb&select=node)
+and preview the data at (http://localhost:8081/?server=db&username=mariadb&db=mariadb&select=node), default pwd: mariadb
 
 Try modify `resources/files.xml` and run the command again.
 

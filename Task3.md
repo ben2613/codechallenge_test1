@@ -9,7 +9,7 @@
 
 ### Adjacency List Model
 
-This is also the approach I come up with. Easiest to read and straightforward.
+This is the approach I come up with. Easiest to read and logic is straightforward.
 
 Advantage
 

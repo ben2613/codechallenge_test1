@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <title>KPWong NetPay Test1</title>
+</head>
+
+<body class="bg-slate-700">
+    <div class="container bg-slate-500 mx-auto h-screen flex justify-center items-center">
+        <div class="relative w-auto">
+            <input id="queryString" class="h-14 w-96 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none" type="text" placeholder="Input Files/Directories name..." />
+            <div class="absolute top-2 right-6">
+                <button id="submitBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="button">Search</button>
+            </div>
+            <div class="basis-full h-1"></div>
+            <textarea id="result" rows="20" cols="255" wrap="off" class="px-1 w-96 focus:shadow focus:outline-none rounded-lg" readonly>
+
+            </textarea>
+        </div>
+    </div>
+</body>
+
+</html>

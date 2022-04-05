@@ -22,7 +22,7 @@ Try modify `resources/files.xml` and run the command again.
 
 ## Task 3
 
-See (report placeholder)
+See [Task3](Task3.md)
 
 ## Task 4
 

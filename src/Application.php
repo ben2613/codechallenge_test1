@@ -2,7 +2,9 @@
 
 namespace Kpwong\Netpaytest1;
 
+use Kpwong\Netpaytest1\Database\NodeDao;
 use Kpwong\Netpaytest1\Database\PDODatabaseConnection;
+use Kpwong\Netpaytest1\Service\NodeQuerier;
 use Kpwong\Netpaytest1\Service\WriteFileIntoDatabase;
 
 class Application
@@ -29,5 +31,12 @@ class Application
         $filePath = $filepath ?? __DIR__ . '/../resources/files.xml';
         $writer = new WriteFileIntoDatabase($this->pdoDbConn);
         $writer->writeFileIntoDatabase($filePath);
+    }
+    public function echoQueryNodes()
+    {
+        $keyword = $_GET['keyword'];
+        $nq = new NodeQuerier($this->pdoDbConn);
+        header('Content-Type: application/json');
+        echo json_encode($nq->query($keyword));
     }
 }
